@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+    <link rel="stylesheet" href="/staticfiles/style.css">
+</head>
+<body>
+        <form action="{{url_for('predict')}}" method="post">
+        <input type="text" name="Age" id="r" placeholder="Customer Age">
+        <input type="text" name="Dependents" id="r" placeholder="Family Member">
+        <input type="text" name="ApplicantIncome" id="r" placeholder="Income">
+        <input type="text" name="LoanAmount" id="r" placeholder="Loan Amount">
+        <input type="text" name="Cibil_Score" id="r" placeholder="Cibil_Score">
+        <input type="text" name="Tenure" id="r" placeholder="Tenure">
+
+            <h3> Gender </h3>
+            <select name="Gender" id="g">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <h3> Married </h3>
+            <select name="Married" id="g">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <h3> Education </h3>
+            <select name="Education" id="g">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <h3> Self_Employed </h3>
+            <select name="Self_Employed" id="g">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <h3> Previous_Loan_Taken </h3>
+            <select name="Previous_Loan_Taken" id="g">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <h3> Property_Area </h3>
+            <select name="Property_Area" id="abc">
+                <option value="0">Rural</option>
+                <option value="1">Semiurban</option>
+                <option value="2">Urban</option>
+            </select>
+
+            <h3> Customer_Bandwith </h3>
+            <select name="Customer_Bandwith" id="abc">
+                <option value="0">Bad</option>
+                <option value="1">Good</option>
+                <option value="2">Medium</option>
+            </select>
+
+            <br><br>
+            <button type="submit" id="sub">Prediction</button>
+
+        </form>
+
+        <br><br>
+        {{prediction_text}}
+        
+</body>
+</html>
